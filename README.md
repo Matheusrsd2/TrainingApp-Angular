@@ -1,26 +1,32 @@
-# ProAgilApp
+# TrainingApp
+Esse projeto é o frontend do sistema Training4.0 e deverá ser integrado em conjunto com o backend para seu correto funcionamento
+
+Instruções para executar o projeto backend estão em: https://github.com/Matheusrsd2/Training4.0/blob/master/README.md
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
 
-## Development server
+Integrantes
+Matheus dos Reis - RA: 582621
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Luis Gustavo - RA: 
 
-## Code scaffolding
+Ingrid Nayara - RA: 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Tecnologias
+Frontend Web: Framework Angular 10
 
-## Build
+HTML 5 / CSS3 / Typescript
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Controle de versão: Github
 
-## Running unit tests
+## Como Executar o projeto localmente
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Possuir o Nodejs instalado na maquina
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+    Na raiz da aplicação
+- Executar o comando npm install para instalar as dependencias
+- Executar o comando ng serve para subir o servidor local
+- acessar pela url: http://localhost:4200
 
 ## Further help
 
