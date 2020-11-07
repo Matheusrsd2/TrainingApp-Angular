@@ -1,0 +1,32 @@
+<!------------------------------ Curso por ID -------------------------->
+<div class="cursos" *ngFor="let curso of cursobyId">
+    <h1 style="position: absolute; left: 600px">Cursos</h1>
+    <mat-card class="cursos mat-elevation-z3" > 
+        <p style="font-size: 2rem;"><b>{{curso?.nome}}</b></p>
+        Criado no dia: {{curso?.dataCadastro | dateFormatPipe }}<br>
+        Duração (HH:mm): {{curso?.tempoDuracao}}
+        Avaliação: {{curso?.classificacao}}<mat-icon>grade</mat-icon><br><br>
+        <div class="imagem">
+            <img src="http://localhost:5000/img/{{curso.imagem}}" height="190px width: 250px">
+        </div>
+        <br>
+    </mat-card><hr>
+    <h1><b>AULAS</b></h1><hr>
+    <div class="novaaula">
+        <button class="btn btn-outline-primary">Nova Aula
+            <i class="fa fa-plus-circle"></i>
+        </button>
+    </div>
+    <mat-card class="aulas mat-elevation-z3" *ngFor="let aula of curso.aulas | paginate: { itemsPerPage:1, currentPage:p }" >
+        Aula nº {{aula.id}} <hr>
+        {{aula.descricao}}<hr>
+        Duração (HH:mm) {{aula.duracao}} |
+        Criado em: {{aula.dataCadastro | dateFormatPipe}}<hr>
+        <object width="780" height="440">
+            <param name="movie" value="http://localhost:5000/video/{{aula.videoAula}}" />
+            <embed src="http://localhost:5000/video/{{aula.videoAula}}" type="video/mp4" width="780" height="440" />
+        </object><hr>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </mat-card><br><br>
+</div>
+

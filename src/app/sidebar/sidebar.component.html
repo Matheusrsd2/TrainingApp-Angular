@@ -1,0 +1,35 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="wrapper" >
+    <div class="toggle">
+    <button (click)="_toggleSidebar()">
+        <i class="material-icons">
+            reorder
+        </i>
+    </button>
+    </div>
+    <div class="sidebar" *ngIf="!isDisplay">
+        
+        <h2>Training Menu</h2>
+        <ul>
+            <li><a routerLink="/">HOME    <mat-icon>home</mat-icon></a></li>
+            <li><a routerLink="/categorias">CATEGORIAS    <mat-icon>storage</mat-icon></a></li>
+            <li><a routerLink="/cursos"> CURSOS    <mat-icon>book</mat-icon></a></li>
+            <li><a routerLink="favoritos">FAVORITOS   <mat-icon>favorite</mat-icon></a></li>
+            <li><a routerLink="forum">FORUM    <mat-icon>question_answer</mat-icon></a></li>
+            <li><a routerLink="/sobre">SOBRE    <mat-icon>help</mat-icon></a></li>
+            
+        </ul> 
+        <div class="social">
+            <a href="http://facebook.com" target="_blank"><img class="logo" src="assets/facebook.png" alt="logo" width="50px" height="50px"></a>
+            <a href="http://linkedin.com" target="_blank"><img class="logo" src="assets/in.png" alt="logo" width="50px" height="50px"></a>
+            <a href="http://youtube.com" target="_blank"><img class="logo" src="assets/yt.png" alt="logo" width="50px" height="50px"></a>
+        </div>
+    </div>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+    
+</div>
+
+

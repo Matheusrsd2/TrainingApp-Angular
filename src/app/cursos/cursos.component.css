@@ -1,0 +1,41 @@
+.cursos{
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: center;
+    padding: 20px;
+    width: 600px;
+    height: 290px;
+    margin-top: 5px;
+    margin-left: 150px;
+    padding-left: 50px;
+    
+}
+
+.cursos .p{
+    text-align: center;
+}
+
+.novocurso{
+    position: absolute;
+    top: 20px;
+    left: 50px;
+}
+
+.pesquisa{
+    position: absolute;
+    left: 73%;
+    text-align: center;
+}
+
+.example-form {
+    position: absolute;
+    left: 50%;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }

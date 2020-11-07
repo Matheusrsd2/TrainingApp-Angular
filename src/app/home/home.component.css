@@ -1,0 +1,32 @@
+.card{
+    width: 1200px;
+    position: absolute;
+    left: 120px;
+    top: 30px;
+}
+.home .title{
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2;
+    
+}
+.img{
+    text-align: center;
+}
+.home .subtitle{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.txt{
+    text-align: center;
+    font-size: 1rem;
+}
+
+.robo{
+    position: absolute;
+    left: 78%;
+   
+}

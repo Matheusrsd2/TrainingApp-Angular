@@ -1,0 +1,130 @@
+<mat-card class="novocurso mat-elevation-z3">
+    <p>Clique aqui para criar um Novo Curso</p>
+    <button class="btn btn-outline-primary" (click)="openModal(template)">Novo Curso
+        <i class="fa fa-plus-circle"></i>
+    </button>
+</mat-card>
+<br>
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Pesquisar Curso</mat-label>
+        <input matInput type="text" name="nomeCurso" [(ngModel)]="nomeCurso" (ngModelChange)="search()">
+    </mat-form-field>
+</form>
+<hr>
+<div class="cursos">
+<h1>Cursos</h1>
+<mat-card class="cursos mat-elevation-z3" *ngFor="let curso of cursos">
+        Curso {{curso.id}} - 
+        <a routerLink="/cursos/{{curso.id}}"><p style="font-size: 2rem;" ><b>{{curso.nome}}</b></p></a>
+        Criado no dia: {{curso.dataCadastro | dateFormatPipe }}<br>
+        Duração HH:mm {{curso.tempoTotal}}
+        Avaliação: {{curso.classificacao}}<mat-icon>grade</mat-icon><br><br>
+        <img src="http://localhost:5000/img/{{curso.imagem}}" height="142px width: 170px">
+        <br>
+</mat-card>
+</div>
+
+<!--LARGE MODAL-->
+<div bsModal #template="bs-modal" class="modal fade" tabindex="-1"
+     role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-sizes-name1" class="modal-title pull-left">Novo Curso</h4>
+        <button type="button" class="close pull-right" (click)="template.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="registerForm">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Nome</label>
+                    <input type="text" [ngClass]="{'is-invalid': registerForm.get('nome').errors && registerForm.get('nome').touched}" 
+                    class="form-control is-invalid" formControlName="nome">
+                    <div class="invalid-feedback" 
+                        *ngIf="registerForm.get('nome').hasError('required') && registerForm.get('nome').touched">
+                        O Nome é obrigatório
+                    </div>
+                    <div *ngIf="registerForm.get('nome').hasError('minLength') && registerForm.get('nome').touched"
+                        class="invalid-feedback" >No minimo 4 caracteres
+                    </div>
+                    <div class="invalid-feedback" *ngIf="registerForm.get('nome').hasError('maxLength') && registerForm.get('nome').touched">No maximo 25 caracteres</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label>Data de Criação</label>
+                    <input type="date" [ngClass]="{'is-invalid': registerForm.get('dataCadastro').errors && registerForm.get('dataCadastro').touched}"
+                    class="form-control is-invalid" formControlName="dataCadastro">
+                    <div class="invalid-feedback" 
+                        *ngIf="registerForm.get('dataCadastro').hasError('required') && registerForm.get('dataCadastro').touched">
+                        A data é obrigatório
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Duração Total</label>
+                    <input type="time"
+                    [ngClass]="{'is-invalid': registerForm.get('tempoDuracao').errors && registerForm.get('tempoDuracao').touched}"
+                    class="form-control is-invalid" formControlName="tempoDuracao">
+                    <div class="invalid-feedback"
+                        *ngIf="registerForm.get('tempoDuracao').hasError('required') && registerForm.get('tempoDuracao').touched">
+                        O campo é obrigatório
+                    </div>
+                </div>
+                <!--div class="form-group col-md-3">
+                    <label>Classificação</label>
+                    <input type="number"
+                    [ngClass]="{'is-invalid': registerForm.get('classificacao').errors && registerForm.get('classificacao').touched}"
+                    class="form-control is-invalid" formControlName="classificacao">
+                    <div class="invalid-feedback"
+                        *ngIf="registerForm.get('classificacao').hasError('required') && registerForm.get('classificacao').touched"
+                        >O campo é obrigatório
+                    </div>
+                </div!-->
+                <div class="form-group col-md-3">
+                    <label>Informe o Codigo Categoria</label>
+                    <input type="number"
+                    [ngClass]="{'is-invalid': registerForm.get('categoriaId').errors && registerForm.get('categoriaId').touched}"
+                    class="form-control is-invalid" formControlName="categoriaId">
+                    <div class="invalid-feedback"
+                        *ngIf="registerForm.get('categoriaId').hasError('required') && registerForm.get('categoriaId').touched"
+                        >O campo Categoria é obrigatório
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-5">
+                <label>Imagem</label>
+                <input type="file" class="form-control" formControlName="imagem">
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" (click)="salvarAlteracao(template)" [disabled]="!registerForm.valid">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------ Curso por ID -------------------------->
+<!--div class="addaula">
+    <p>Clique aqui para adicionar uma nova Aula</p>
+</div>
+<div class="novaaula">
+    <button class="btn btn-outline-primary" (click)="openModal(template)">Nova Aula
+        <i class="fa fa-plus-circle"></i>
+    </button>
+</div>
+<div class="cursos">
+<h1 style="position: absolute; left: 600px">Cursos</h1>
+<mat-card class="cursos mat-elevation-z3">
+        Curso {{cursoById.id}} - 
+        <p style="font-size: 2rem;"><b>{{cursoById.nome}}</b></p>
+        Criado no dia: {{cursoById.dataCadastro | dateFormatPipe }}<br>
+        Duração: {{cursoById.tempoTotal}}
+        Avaliação: {{cursoById.classificacao}}<mat-icon>grade</mat-icon><br><br>
+        <img src="http://localhost:5000/img/{{cursoById.imagem}}" height="142px width: 170px">
+        <br>
+</mat-card>
+</div!-->

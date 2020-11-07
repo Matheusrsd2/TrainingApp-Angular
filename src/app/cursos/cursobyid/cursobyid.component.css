@@ -1,0 +1,28 @@
+.cursos{
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.2;
+    padding: 20px;
+    width: 850px;
+    height: 100%;
+    margin-top: 5px;
+    padding-left: 50px;
+}
+
+.aulas{
+    width: 850px;
+    
+    
+}
+
+.imagem{
+    position: absolute;
+    left: 880px;
+    top: 0px;
+}
+
+.novaaula{
+    position: absolute;
+    top: 250px;
+    left: 165px;
+}
