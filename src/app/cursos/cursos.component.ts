@@ -47,9 +47,9 @@ export class CursosComponent implements OnInit {
         console.log(novoEvento);
         template.hide();
         this.getCurso();
-        this.toastr.success('Curso criado com Sucesso!', '', {timeOut: 8000});
+        this.toastr.success('Curso criado com Sucesso!', '', {timeOut: 7000});
       }, error => {
-        this.toastr.error('Houve um erro ao salvar, tente novamente', '', {timeOut: 8000});
+        this.toastr.error('Houve um erro ao salvar, tente novamente', '', {timeOut: 7000});
         console.log(error);
       }
     )
