@@ -7,7 +7,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DateFormatPipePipe } from './helps/date-format-pipe.pipe';
 import { CursoService } from './services/curso.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 //ngx-bootstrap
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -25,6 +24,7 @@ import { CursosComponent } from './cursos/cursos.component';
 //Material Design
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -34,6 +34,10 @@ import { MatInputModule } from '@angular/material/input';
 //Search / Pagination
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AulasComponent } from './aulas/aulas.component';
+
+//ngx-toastr
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -49,6 +53,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SobreComponent,
     CategoriasComponent,
     CursobyidComponent,
+    AulasComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +74,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatFormFieldModule,
     MatInputModule,
     Ng2SearchPipeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatGridListModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
   ],
   providers: [
     CursoService

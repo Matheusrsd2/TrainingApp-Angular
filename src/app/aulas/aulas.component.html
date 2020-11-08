@@ -1,0 +1,56 @@
+<!--div style="text-align: center;">
+    <h2>Criar nova Aula</h2>
+</div>
+<mat-card class="aulas mat-elevation-z3">
+    <form class="form" novalidate>
+        <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <mat-form-field>
+                <mat-label >Descrição</mat-label>
+                <input matInput type="text" [formControl]="descricao" name="descricao" placeholder="Descrição" required>
+                <mat-error *ngIf="descricao.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4 mb-3">
+            <mat-form-field>
+                <mat-label >Duração</mat-label>
+                <input matInput type="time" [formControl]="duracao" name="duracao" placeholder="Duração" required>
+                <mat-error *ngIf="duracao.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4 mb-3">
+            <mat-form-field>
+                <mat-label >Data</mat-label>
+                <input matInput type="date" [formControl]="dataCadastro" name="dataCadastro" placeholder="Data" required>
+                <mat-error *ngIf="dataCadastro.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+        </div><hr>
+        <div class="form-group">
+            <label>Videoaula</label><br>
+            <input type="file" name="videoAula" placeholder="Carregar do meu Computador">
+        </div><hr>
+        <button mat-raised-button color="primary">Salvar</button>
+    </form>
+  </mat-card!-->
+<mat-card class="aulas mat-elevation-z3">
+    <form [formGroup]="form" class="normal-form">
+        <mat-grid-list cols="2" rowHeight="300px">
+            <div class="controles-container">
+                <mat-form-field>
+                    <input matInput formControlName="descricao" placeholder="Descrição" required>
+                    <mat-error *ngIf="form.controls['descricao'].errors?.required">A Descrição é obrigatória</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="time" formControlName="duracao" placeholder="Duração" required>
+                </mat-form-field><br>
+                <mat-form-field>
+                    <input matInput type="date" formControlName="dataCadastro" placeholder="Data" required>
+                </mat-form-field><hr>
+            </div>
+            <mat-label>Videoaula</mat-label><br>
+            <input type="file" formControlName="videoAula">
+        </mat-grid-list><hr>
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Salvar</button>
+    </form>
+</mat-card>

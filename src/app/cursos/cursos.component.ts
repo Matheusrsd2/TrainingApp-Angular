@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Curso } from '../models/Curso';
 import { CursoService } from '../services/curso.service';
 import { BsModalService } from 'ngx-bootstrap/modal';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cursos',
@@ -18,7 +19,8 @@ export class CursosComponent implements OnInit {
   registerForm: FormGroup;
 
 
-  constructor(private cursoService: CursoService, private modalService: BsModalService) { }
+  constructor(private cursoService: CursoService, private modalService: BsModalService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.validation();
@@ -45,7 +47,9 @@ export class CursosComponent implements OnInit {
         console.log(novoEvento);
         template.hide();
         this.getCurso();
+        this.toastr.success('Curso criado com Sucesso!', '', {timeOut: 8000});
       }, error => {
+        this.toastr.error('Houve um erro ao salvar, tente novamente', '', {timeOut: 8000});
         console.log(error);
       }
     )

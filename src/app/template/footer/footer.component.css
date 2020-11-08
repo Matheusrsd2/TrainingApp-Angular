@@ -8,3 +8,8 @@
     background-color: #7a61ab;
     color: aliceblue;
 }
+
+.copyright{
+    position: absolute;
+    left: 40%;
+}

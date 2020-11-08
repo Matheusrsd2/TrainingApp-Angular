@@ -12,12 +12,22 @@ Luis Gustavo - RA:
 
 Ingrid Nayara - RA: 
 
-Tecnologias
-Frontend Web: Framework Angular 10
+# Funcionalidade
+| Data  |  Evento  |
+| ------------------- | ------------------- |
+| 19/10/2020 | Analise das Tecnologias |
+| 24/10/2020 | Criado os componentes da aplicação |
+| 24/10/2020 | Definido a camada de serviço para as requisições HTTP |
+| 24/10/2020 | Implentação Geral do componente Cursos baseada no Protótipo  |
+| 03/11/2020 | Implentação Geral do componente Aulas baseada no Protótipo  |
 
-HTML 5 / CSS3 / Typescript
-
-Controle de versão: Github
+# Tecnologias
+| Tecnologia  |  Descrição  |
+| ------------------- | ------------------- |
+| Angular 10 | Framework de desenvolvimento frontend Single-Page-Aplication SPA |
+| ng-bootstrap e angular material |  Bibliotecas CSS para o Angular |
+| Typescript |  Superset da Linguagem Javascript |
+| HTTP Client |  Biblioteca para requições HTTP baseada em Observables |
 
 ## Como Executar o projeto localmente
 
