@@ -15,16 +15,14 @@
 <div class="cursos">
 <h1>Cursos</h1>
 <mat-card class="cursos mat-elevation-z3" *ngFor="let curso of cursos">
-        Curso {{curso.id}} - 
-        <a routerLink="/cursos/{{curso.id}}"><p style="font-size: 2rem;" ><b>{{curso.nome}}</b></p></a>
-        Criado no dia: {{curso.dataCadastro | dateFormatPipe }}<br>
-        Duração HH:mm {{curso.tempoTotal}}
-        Avaliação: {{curso.classificacao}}<mat-icon>grade</mat-icon><br><br>
-        <img src="http://localhost:5000/img/{{curso.imagem}}" height="142px width: 170px">
-        <br>
+    Curso {{curso.id}} - 
+    <a routerLink="/cursos/{{curso.id}}"><p style="font-size: 2rem;" ><b>{{curso.nome}}</b></p></a>
+    Criado no dia: {{curso.dataCadastro | dateFormatPipe }}<br>
+    Duração HH:mm {{curso.tempoTotal}}
+    Avaliação: {{curso.classificacao}}<mat-icon>grade</mat-icon><br><br>
+    <img src="http://localhost:5000/resources/images/{{curso.imagem}}" height="142px width: 170px">
 </mat-card>
-</div>
-
+<br><hr><hr><hr><br>
 <!--LARGE MODAL-->
 <div bsModal #template="bs-modal" class="modal fade" tabindex="-1"
      role="dialog" aria-labelledby="dialog-sizes-name1">
@@ -96,7 +94,7 @@
             </div>
             <div class="form-group col-md-5">
                 <label>Imagem</label>
-                <input type="file" class="form-control" formControlName="imagem">
+                <input type="file" #file class="form-control" formControlName="imagem" (change)="onFileChange($event)">
             </div>
         </form>
       </div>

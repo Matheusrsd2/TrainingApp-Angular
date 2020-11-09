@@ -26,4 +26,11 @@ export class CursoService {
     postCurso(curso: Curso){
         return this.http.post(this.baseUrl, curso);
     }
+
+    postUpload(file: File){
+        const fileToUpload = <File>file[0];
+        const formData = new FormData();
+        formData.append('file', fileToUpload, fileToUpload.name)
+        return this.http.post(`${this.baseUrl}/upload`, formData)
+    }
 }

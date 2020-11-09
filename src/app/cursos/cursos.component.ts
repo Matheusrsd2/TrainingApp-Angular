@@ -17,6 +17,7 @@ export class CursosComponent implements OnInit {
   nomeCurso: any;
   formCurso: FormGroup;
   registerForm: FormGroup;
+  file: File;
 
 
   constructor(private cursoService: CursoService, private modalService: BsModalService,
@@ -42,6 +43,12 @@ export class CursosComponent implements OnInit {
   salvarAlteracao(template:any){
     this.curso = Object.assign({}, this.registerForm.value);
     //console.log(this.evento);
+
+    this.cursoService.postUpload(this.file).subscribe();
+
+    const nomeArquivo = this.curso.imagem.split('\\', 3);
+    this.curso.imagem = nomeArquivo[2];
+
     this.cursoService.postCurso(this.curso).subscribe(
       (novoEvento: Curso) => {
         console.log(novoEvento);
@@ -53,7 +60,15 @@ export class CursosComponent implements OnInit {
         console.log(error);
       }
     )
-    
+  }
+
+  onFileChange(event){
+    const reader = new FileReader();
+    if (event.target.files && event.target.files.length){
+      this.file = event.target.files;
+    }
+    console.log(this.file);
+
   }
 
   validation(){

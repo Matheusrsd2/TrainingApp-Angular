@@ -6,7 +6,7 @@ export class Curso
     dataCadastro: string; 
     imagem: string; 
     tempoDuracao: string;
-    classificacao: number | null;
+    classificacao: number ;
     categoriaId: number; 
     
 }
