@@ -18,8 +18,10 @@ Ingrid Nayara - RA:
 | 19/10/2020 | Analise das Tecnologias |
 | 24/10/2020 | Criado os componentes da aplicação |
 | 24/10/2020 | Definido a camada de serviço para as requisições HTTP |
-| 24/10/2020 | Implentação Geral do componente Cursos baseada no Protótipo  |
-| 03/11/2020 | Implentação Geral do componente Aulas baseada no Protótipo  |
+| 24/10/2020 | Implementação Geral do componente Cursos baseada no Protótipo  |
+| 10/10/2020 | Validação do Form Cursos e upload de arquivos para o servidor |
+| 10/10/2020 | Filtro de Pesquisa para Cursos |
+| 10/11/2020 | Implementação Geral do componente Aulas baseada no Protótipo  |
 
 # Tecnologias
 | Tecnologia  |  Descrição  |
