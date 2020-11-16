@@ -25,8 +25,8 @@
         Duração (HH:mm) {{aula.duracao}} |
         Criado em: {{aula.dataCadastro | dateFormatPipe}}<hr>
         <object width="780" height="440">
-            <param name="movie" value="http://localhost:5000/video/{{aula.videoAula}}" />
-            <embed src="http://localhost:5000/video/{{aula.videoAula}}" type="video/mp4" width="780" height="440" />
+            <param name="movie" value="http://localhost:5000/resources/video/{{aula.videoAula}}" />
+            <embed src="http://localhost:5000/resources/video/{{aula.videoAula}}" type="video/mp4" width="780" height="440" />
         </object><hr>
         <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </mat-card><br><br>

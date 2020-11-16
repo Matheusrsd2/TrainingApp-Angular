@@ -17,9 +17,9 @@
 <mat-card class="cursos mat-elevation-z3" *ngFor="let curso of cursos">
     Curso {{curso.id}} - 
     <a routerLink="/cursos/{{curso.id}}"><p style="font-size: 2rem;" ><b>{{curso.nome}}</b></p></a>
-    Criado no dia: {{curso.dataCadastro | dateFormatPipe }}<br>
-    Duração HH:mm {{curso.tempoTotal}}
-    Avaliação: {{curso.classificacao}}<mat-icon>grade</mat-icon><br><br>
+    <b>Criado no dia:</b> {{curso.dataCadastro | dateFormatPipe }}<br>
+    <b>Duração (HH:mm)</b> {{curso.tempoDuracao}} |
+    <b>Avaliação:</b> {{curso.classificacao}}<mat-icon>grade</mat-icon><br><br>
     <img src="http://localhost:5000/resources/images/{{curso.imagem}}" height="142px width: 170px">
 </mat-card>
 <br><hr><hr><hr><br>
